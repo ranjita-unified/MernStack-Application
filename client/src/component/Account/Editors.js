@@ -16,7 +16,7 @@ import Header from '../Common/Header';
 
 import { useGetEditors } from '../../module/users/hooks';
 import { IMAGE_URL } from '../../service/api';
-import { ErrorCodes } from '../../enums';
+import { ErrorCodes,Messages } from '../../enums';
 
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -92,7 +92,7 @@ const Editors = () => {
                 ))}
                 {rows.length === 0 && <StyledTableRow>
                   <StyledTableCell colSpan={4}>
-                      No Data Found
+                      {Messages.noDataFound}
                   </StyledTableCell>
                 </StyledTableRow> 
                 } 

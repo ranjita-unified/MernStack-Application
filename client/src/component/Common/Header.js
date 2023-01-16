@@ -24,32 +24,31 @@ const Header = () => {
         window.location.href = '/';
     }
 
-    const {refetch:refetchLogout, isSuccess: isLogoutSuccess, isError: isLogoutError, error:logOutError } =  useLogoutUser();
-
-    if(isLogoutError) {
-        if(logOutError.status === 401) {
-            sessionStorage.clear();
-            window.location.href = '/';
-          }
-    }
-    const userProfileData = sessionStorage.getItem('userProfile')?JSON.parse(sessionStorage.getItem('userProfile')):'';
-    const userRole = userProfileData?.role;
+    const {refetch:refetchLogout, isError: isLogoutError, error:logOutError } =  useLogoutUser();
 
     const logoutUser = async(e) => {
         e.preventDefault();
         if(sessionStorage.getItem('accessToken') && sessionStorage.getItem('refreshToken')) 
-        {
+        {            
             await refetchLogout();
-            if(isLogoutSuccess) {
-                sessionStorage.clear();
-                window.location.href = '/';
-            }
+            sessionStorage.clear();
+            window.location.href = '/';
         }
         else {
             sessionStorage.clear();
             window.location.href = '/';
         } 
     }
+
+    if(isLogoutError) {
+        if(logOutError.status === 401) {
+            sessionStorage.clear();
+            window.location.href = '/';
+        }
+    }
+    const userProfileData = sessionStorage.getItem('userProfile')?JSON.parse(sessionStorage.getItem('userProfile')):'';
+    const userRole = userProfileData?.role;
+    
     return (
         <HeaderComponent>
             <HeaderContainer>

@@ -6,9 +6,9 @@ export const appUrls = {
     userLogin: API_URL+ "/login",
     userLogout: API_URL+ "/logout",
     userEditProfile: API_URL+ "/users/editProfile",
-    updateProfileImage: API_URL+ "/updateProfileImage",
-    getAllEditors: API_URL+ "/getAllEditors",
+    updateProfileImage: API_URL+ "/user/editImage",
+    getAllEditors: API_URL+ "/editor/list",
     verifyToken: API_URL+ "/verifyToken",
-    updateUserDetails: API_URL+ "/updateUserDetails",
+    updateUserDetails: API_URL+ "/user/edit",
 }
 

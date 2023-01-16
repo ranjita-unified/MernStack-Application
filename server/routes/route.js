@@ -10,9 +10,9 @@ const jsonParser = bodyParser.json();
 router.post('/users/signup', jsonParser, userController.signupUser);
 router.post('/login', jsonParser, userController.loginUser);
 router.post('/logout', jsonParser, auth,userController.logoutUser);
-router.post('/updateProfileImage', upload.single("file"),auth, userController.updateProfileImage);
-router.get('/getAllEditors', auth,userController.getAllEditors);
+router.post('/user/editImage', upload.single("file"),auth, userController.updateProfileImage);
+router.get('/editor/list', auth,userController.getAllEditors);
 router.post('/verifyToken', auth,userController.verifyToken);
-router.post('/updateUserDetails', jsonParser, auth,userController.updateUserDetails);
+router.post('/user/edit', jsonParser, auth,userController.updateUserDetails);
 
 module.exports = router;

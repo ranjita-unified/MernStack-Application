@@ -31,7 +31,7 @@ const loginUser = async(req,res) => {
         const refreshToken = jwt.sign(user._id, process.env.REFRESH_SECRET_KEY, { expiresIn: '30m' }); 
 
         await user.save();
-        return res.send({name,email,role,profileImage,accessToken,refreshToken})
+        return res.send({name,email,role,profileImage,accessToken,refreshToken});
     } catch (e) {
         return res.status(400).send()
     }

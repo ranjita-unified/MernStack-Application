@@ -18,5 +18,6 @@ export const ErrorCodes = {
 export const Messages = {
     successLogin: "Succesfully Logged In",
     successSignup: "You have successfully registered !!",
-    successUpdate: "Successfully Updated."
+    successUpdate: "Successfully Updated.",
+    noDataFound: "No Data Found."
 }

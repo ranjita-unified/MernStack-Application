@@ -20,7 +20,7 @@ const auth = async (req, res, next) => {
                         const newAccessToken =  jwt.sign(user._id, process.env.ACCESS_SECRET_KEY, { expiresIn: '15m' });
                         return res.send({name,email,role,profileImage,newAccessToken,refreshToken});
                     }
-                })
+                });
             }
             else {
                 User.findById(decoded, function (err, user) {
