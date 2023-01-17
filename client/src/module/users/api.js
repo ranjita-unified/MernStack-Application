@@ -12,10 +12,6 @@ export const registerUser = async (data) => {
   return axiosInstance({
     url: appUrls.userSignup,
     method: "POST",
-    headers: {
-      'Authorization': sessionStorage.getItem('accessToken'),
-      'RefreshToken': sessionStorage.getItem('refreshToken')
-    },
     data: body
   })
   .then(({ data }) => {
