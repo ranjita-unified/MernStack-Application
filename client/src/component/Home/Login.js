@@ -22,7 +22,7 @@ import { useLoginUser } from '../../module/users/hooks';
 import { ActionTypes, ErrorCodes, Messages } from '../../enums';
 
 
-const Login = ({displaySignup}) => {
+const Login = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -122,7 +122,7 @@ const Login = ({displaySignup}) => {
                                 
                                 <LoginButton variant='contained' type="submit">Sign In</LoginButton>
                                 <Text style={{ textAlign: 'center'}}>OR</Text>
-                                <SignupButton onClick={()=>displaySignup(true)}>Create an account</SignupButton>
+                                <SignupButton onClick={()=>dispatchAction(ActionTypes.setLogin,false)}>Create an account</SignupButton>
                             </Wrapper>
                         </CustomForm> 
                     </FormProvider>

@@ -21,7 +21,7 @@ import { useAddUser } from '../../module/users/hooks';
 import { ActionTypes, Messages, ErrorCodes } from '../../enums';
 
 
-const SignUp = ({displayLogin}) => {
+const SignUp = () => {
     const {
         state,
         dispatchAction,
@@ -123,7 +123,7 @@ const SignUp = ({displayLogin}) => {
 
                                         <LoginButton variant='contained' type="submit">Sign Up</LoginButton>
                                         <Text style={{ textAlign: 'center'}}>OR</Text>
-                                        <SignupButton onClick={()=>displayLogin(true)}>Already have an account</SignupButton>
+                                        <SignupButton onClick={()=>dispatchAction(ActionTypes.setLogin,true)}>Already have an account</SignupButton>
                                     </CustomForm>
                             </Wrapper>
                         </FormProvider>
